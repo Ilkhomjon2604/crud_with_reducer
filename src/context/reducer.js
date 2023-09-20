@@ -32,11 +32,22 @@ export const  reducer = (state, action) =>{
                     age : state.userAge,
                 }
             ]
-            
+
             return  state.userName.length && state.userAge.length && state.userJob.length && state.userStatus.length?
              {...state, info : addUser, userName:'', userAge:'', userStatus:'', userJob: ''} : state
 
+        case 'Update':
+            return {
+                ...state, active: action.payload.data.id,
+                nameE : action.payload.data.name,
+                jobE : action.payload.data.job,
+                statusE : action.payload.data.status,
+                ageE : action.payload.data.age,
+        }
 
+        case 'Save':
+            let updatedData = state.info.map((value) => value.id === state.active ? {...value, name: state.nameE, age : state.ageE, status : state.statusE, job: state.jobE} : value)
+            return {...state, info : updatedData, active: null}
          default: return state;}
         
     }

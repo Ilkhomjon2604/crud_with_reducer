@@ -21,7 +21,7 @@ function Table()  {
         ageE: '',
     });
         
-
+console.log(data.active);
         return (
             <>
                 <div className="search">
@@ -58,29 +58,43 @@ function Table()  {
                             return <tr key={id}>
 
                                 <td>{id}</td>
-                                <td> 
-                                     {name}
+                                <td>  {data.active === id ? 
+                                    <input  name="nameE"  onChange={(e)=>dispatch({type:'Create', payload: {name: e.target.name, value: e.target.value}})} className="edit-input"  value={data.nameE} type="text"/>
+                                    :name
+                                }
                                 </td>
 
                                 <td> 
-                                      {job } 
+                                      {data.active === id ? 
+                                    <input  name="jobE" onChange={(e)=>dispatch({type:'Create', payload: {name: e.target.name, value: e.target.value}})}  className="edit-input"  value={data.jobE} type="text"/>
+                                    :job
+                                }
                                 </td>
 
                                  <td> 
-                                   {status}  
+                                 {data.active === id ? 
+                                    <input  name="statusE" onChange={(e)=>dispatch({type:'Create', payload: {name: e.target.name, value: e.target.value}})} className="edit-input"  value={data.statusE} type="text"/>
+                                    :status
+                                }
                                 </td>
 
                                  <td> 
-                                     {age}  
+                                 {data.active === id ? 
+                                    <input  name="ageE" onChange={(e)=>dispatch({type:'Create', payload: {name: e.target.name, value: e.target.value}})} className="edit-input" value={data.ageE} type="number"/>
+                                    :age
+                                }
                                 </td>
 
                                 <td className="action-td">
 
-                                <button >
-                                       edit
-                                </button>
+                               {data.active === id ?  
+                               <button onClick={()=>{dispatch({type:'Save' })}}>Save</button>
+                              : <button onClick={ ()=> dispatch( {type: 'Update', payload: {data : {id, name, job, status, age}}   })}> Edit </button>
+                               
+                            }
+                              
 
-                                <button onClick={()=>dispatch({type: 'Del', payload: {ids: id}})} >Delete</button>
+                                <button onClick={()=>dispatch({type: 'Del', payload: {ids: id}})} > Delete </button>
 
                                 </td>
                                 
