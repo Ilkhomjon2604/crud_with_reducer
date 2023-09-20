@@ -1,0 +1,93 @@
+table{
+    width: 70%;
+    margin: 0 auto;
+    border-collapse: collapse !important;
+
+
+}
+td{
+    padding : 10px 20px;
+    margin: auto;
+
+
+}
+th{
+    padding: 10px !important;
+    background-color:rgb(122, 120, 252);
+    color: rgb(0, 0, 0);
+}
+
+button{
+    margin-right: 20px;
+    padding: 5px 20px;
+    background-color: #fff;
+    cursor: pointer;
+}
+td{
+    text-align: center ;
+}
+tr:nth-child(even) {background: #dbdada}
+tr:nth-child(odd) {background: #f1f1f1}
+.search-wrap{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px 0;
+}
+.search{
+    width: auto;
+    display: flex;
+    justify-content: center;
+    padding: 20px;
+}
+
+.search input{
+    padding: 10px ;
+}
+select{
+    padding: 10px;
+    border: 1px solid black;
+    margin-right: 5px;
+}
+
+
+.input-wrapper{
+    width: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 50px auto;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.input-wrapper input{
+    padding: 10px 20px 10px 5px;
+}
+
+.input-wrapper button{
+    padding: 10px 20px ;
+    border-radius: 5px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    -o-border-radius: 5px;
+}
+
+.action-td{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.no-data{
+    padding: 20px;
+}
+
+.edit-input{
+    border: 1px solid rgba(0, 0, 0, 0.042);
+    padding: 10px ;
+    outline: none;
+    background-color: rgba(255, 255, 255, 0);
+    width: 100%;
+}
